@@ -2,63 +2,64 @@
   text-align: center;
 }
 html {
-  background:#1b1b1b;
+  background:#FFFFFF;
  
-}
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
 }
 
 button {
   display: block;
-    width: 395px;
-    height: 30px;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    background: #f52718;
-    border: none;
-    color: #fdfdfd;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor:pointer;
-    transition:.3s;
+  width: 563px;
+  height: 50px;
+  background: #002E5D;
+  border: none;
+  color: #FFFFFF;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-transition: .3s;
 }
 
 button:hover {
-  background:#222;
+  background:#005EB8;
   transition:.4s;
 }
 
 .App-header {
     height: auto;
     padding: 0;
-    color: #fdfdfd;
+    color: #333F48;
     background-size: cover;
     background-position: center;
     position: relative;
     overflow: hidden;
     text-align:left;
-    background: #1b1b1b;
-
+    background: #FFFFFF;
 }
 .App-header h1 {
-    padding-left: 2px;
-    position: relative;
-    font-size: 28px;
-    font-weight: lighter;
-    text-transform: uppercase;
-    letter-spacing: -2px;
-    font-size: 24px;
+  padding-top: 28px;
+  font-size: 18px;
+  font-weight: 200;
+  display: inline-block;
+  position: absolute;
+  color: #FFF;
 }
 .header-wrapper {
-    margin-left: 13%;
-    top:10px;
-    position:relative;
+  position: relative;
+  background-color: #002E5D;
+  display: block;
 }
-.header-wrapper > img {
-    width: 107px;
-    position:relative;
+.header-wrapper > div {
+  position: relative;
+  background-color: #002E5D;
+  max-width: 1280px;
+  margin: auto;
+  display: block;
+}
+
+.header-wrapper > div > img {
+  width: 50px;
+  margin: 25px;
+  position: relative;
 }
 .header-wrapper > * {
   display:inline-block;
@@ -69,16 +70,7 @@ button:hover {
 }
 .field-wrapper {
     text-align: left;
-    width: 100%;
-    /* margin: auto; */
     margin-left: 34.8%;
-}
-.field-wrapper:hover h5 {
-    color: #7fcce6;
-    transition: .3s;
-    animation:fieldblink .9s infinite;
-    animation-timing-function:ease-in-out;
-    animation-delay:.3s;
 }
 
 @keyframes fieldblink {
@@ -96,19 +88,20 @@ button:hover {
     height: 100%;
 }
 .App-header ul {
-    list-style: none;
-    position: relative;
-    border-left: 11px solid #4c0e0a;
-    padding-bottom: 0;
-    margin-bottom: 0;
-    margin-left: 20%;
-    border-top-left-radius: 5px;
-    background: #222;
-    box-sizing:border-box;
-    padding: 9px 15px;
-    max-width: 605px;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
+  list-style: none;
+  position: relative;
+  border-left: 11px solid #002E5D;
+  border-top: 11px solid #002E5D;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  margin-left: 20%;
+  border-top-left-radius: 0px;
+  background: #FFF;
+  box-sizing: border-box;
+  padding: 9px 15px;
+  max-width: 605px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 .App-header li {
   line-height:170%;
@@ -117,19 +110,20 @@ button:hover {
 .App-intr
 .App-title {
   font-size: 1.5em;
-  color:#555;
+  color:#FFF;
   position:relative;
   z-index:3;
 }
 
 .App-intro {
   font-size: large;
+  margin: 15px;
 }
 
-.App-intro h5 {
+.App-intro label {
     padding: 0;
     margin: 9px 0px 8px 0px;
-    color: #fdfdfd;
+    color: #333F48;
     width: 31%;
     text-align: left;
     margin-bottom: 10px;
@@ -138,6 +132,7 @@ button:hover {
     font-weight: lighter;
     text-transform: uppercase;
     font-size: 11px;
+    display: block;
 }
 
 .App-intro input {
@@ -145,36 +140,38 @@ button:hover {
     height: 29px;
     text-indent: 5px;
     padding: 5px;
-    border: none;
-    color: #555;
-    font-size: 13px;
-    letter-spacing: 1px;
-    font-weight: 100;
-    background: #222;
-    transform:skewX(1deg);
-    transition:.3s;
-    border-radius:4px;
-    color:#fdfdfd;
+    color: #333F48;
+    font-size: 12px;
+    background: #FFF;
+    transition: .3s;
+    border-radius: 0px;
+    border: unset;
+    outline: 1px solid #002E5D;
 }
+
+.App-intro input:focus-visible {
+  transition: .3s;
+  outline: 2px solid #002E5D;
+}
+
 .line-one {
     position: relative;
     margin-left: 20%;
-    height: 350px;
+    height: 650px;
     position: absolute;
     width: 1px;
     width: 15%;
-    border-left: 11px solid #4c0e0a;
-    border-bottom: 11px solid #4c0e0a;
+    border-left: 11px solid #002E5D;
+    border-bottom: 11px solid #002E5D;
     box-sizing: border-box;
-    border-bottom-left-radius:10px;
+    border-bottom-left-radius:0px;
 }
 
 iframe {
-    border: 11px solid #4c0e0a;
-    padding: 0;
-    width: 373px;
-    height: 144px;
-
+    border: 11px solid #002E5D;
+    width: 500px;
+    height: 300px;
+    padding: 20px;
 }
 
 @keyframes App-logo-spin {

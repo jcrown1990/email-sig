@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import EmailSignature from './EmailSignature.jsx';
-import logo from './images/okmg-new.png';
+import logo from './images/GElogo.svg';
 import './App.css';
 
 class App extends Component {
@@ -9,25 +9,34 @@ class App extends Component {
     super(props);
 
     this.state = {
-
       // Email signature form.
-      name: '',
-      mobileNumber: '',
-      jobTitle: '',
+      name: 'Jane Smith',
+      pronoun: '(she/her)',
+      mobileNumber: '+1 234 567 8901',
+      teleNumber: '+1 234 567 8900',
+      jobTitle: 'Engineer',
+      industry: 'GE Aviation',
+      family: 'Commercial Engines',
       copied: false,
-
     };
 
     this.iframe = React.createRef();
     this.handleChangeName = this.handleChangeName.bind(this);
     this.handleChangeTitle = this.handleChangeTitle.bind(this);
     this.handleMobile= this.handleMobile.bind(this);
+    this.handleTele= this.handleTele.bind(this);
+    this.handlePronoun= this.handlePronoun.bind(this);
+    this.handleIndustry= this.handleIndustry.bind(this);
+    this.handleFamily= this.handleFamily.bind(this);
     this.handleClickCopy= this.handleClickCopy.bind(this);
   }
 
-    handleChangeName(event) {
-      this.setState({ name: event.target.value });
-    }
+  handleChangeName(event) {
+    this.setState({ name: event.target.value });
+  }
+  handleFamily(event) {
+    this.setState({ family: event.target.value });
+  }
 
   handleChangeTitle(event){
     this.setState({ jobTitle: event.target.value});
@@ -37,11 +46,21 @@ class App extends Component {
     this.setState({ mobileNumber: event.target.value});
   }
 
-    getIframe() {
+  handleTele(event){
+    this.setState({ teleNumber: event.target.value});
+  }
+
+  handlePronoun(event){
+    this.setState({ pronoun: event.target.value});
+  }
+  handleIndustry(event){
+    this.setState({ industry: event.target.value});
+  }
+  getIframe() {
     return this.iframe.current.iframe.current.contentDocument;
   }
 
-    handleClickCopy(event) {
+  handleClickCopy(event) {
     event.preventDefault();
 
      const doc = this.getIframe();
@@ -56,7 +75,7 @@ class App extends Component {
 
   render() {
 
-            const { copied } = this.state;
+    const { copied } = this.state;
 
     return (
       <div className="App">
@@ -64,39 +83,59 @@ class App extends Component {
 
           <div className="filter"></div>
           <div className="header-wrapper">
-            <img src={logo} alt="okmg"/>
-
-            <h1 className="App-title">Signature builder</h1>
+            <div>
+            <img src={logo} alt="GE Logo"/>
+            <h1 className="App-title">Email Signature Builder</h1>
+            </div>
           </div>
           <ul>
             <li>1. Fill in your details</li>
-            <li>2. Click onto the signature within the <span style={{color:'#F44336;fontWeight:bold'}}>red</span> box</li>
-            <li>3. Command + A / Ctrl + A ( select all ) > Command + C / Ctrl + C ( copy )</li>
-            <li>4. Open Gmail > Settings > Command + V / Ctrl + V ( paste into signature box) > Save</li>
+            <li>2. Click Copy</li>
+            <li>4. Open Outlook Signatures paste and apply</li>
             <li>5. Done! </li>
           </ul>
         </header>
         <div className="line-one"></div>
-        <p className="App-intro">
+        <div className="App-intro">
           <div className="field-wrapper">
-            <h5>Enter your Name</h5>
+            <label>Enter your Name</label>
             <input value={this.state.name} onChange={this.handleChangeName}/>
           </div>
           <div className="field-wrapper">
-            <h5>Enter your Job Title</h5>
+            <label>Enter your preferred pronouns</label>
+            <input value={this.state.pronoun} onChange={this.handlePronoun}/>
+          </div>
+          <div className="field-wrapper">
+            <label>Enter your Job Title</label>
             <input value={this.state.jobTitle} onChange={this.handleChangeTitle}/>
           </div>
           <div className="field-wrapper">
-            <h5>Enter your Mobile Number</h5>
+            <label>Enter your Customer Solution or Product Family</label>
+            <input value={this.state.family} onChange={this.handleFamily}/>
+          </div>
+          <div className="field-wrapper">
+            <label>Enter your Telephone Number</label>
+            <input value={this.state.teleNumber} onChange={this.handleTele}/>
+          </div>
+          <div className="field-wrapper">
+            <label>Enter your Mobile Number</label>
             <input value={this.state.mobileNumber} onChange={this.handleMobile}/>
           </div>
-        </p>
+          <div className="field-wrapper">
+            <label>Enter your Industry Brand</label>
+            <input value={this.state.industry} onChange={this.handleIndustry}/>
+          </div>
+        </div>
         <div className="signature-container">
 
           <EmailSignature
             name={this.state.name}
             mobileNumber={this.state.mobileNumber}
+            teleNumber={this.state.teleNumber}
             jobTitle={this.state.jobTitle}
+            pronoun={this.state.pronoun}
+            industry={this.state.industry}
+            family={this.state.family}
             ref={this.iframe}
             />
 
