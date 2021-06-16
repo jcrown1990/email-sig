@@ -46,7 +46,7 @@ class EmailSignature extends Component {
   }
 
   render() {
-    return <iframe ref={this.iframe} width="400" height="150"/>;
+    return <iframe title="This is a unique title" ref={this.iframe} width="400" height="150"/>;
   }
 }
 
