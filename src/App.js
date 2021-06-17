@@ -98,31 +98,31 @@ class App extends Component {
         <div className="line-one"></div>
         <div className="App-intro">
           <div className="field-wrapper">
-            <label>Enter your Name</label>
+            <label>First and Last Name</label>
             <input value={this.state.name} onChange={this.handleChangeName}/>
           </div>
           <div className="field-wrapper">
-            <label>Enter your preferred pronouns</label>
+            <label>Preferred pronouns</label>
             <input value={this.state.pronoun} onChange={this.handlePronoun}/>
           </div>
           <div className="field-wrapper">
-            <label>Enter your Job Title</label>
+            <label>Job Title</label>
             <input value={this.state.jobTitle} onChange={this.handleChangeTitle}/>
           </div>
           <div className="field-wrapper">
-            <label>Enter your Customer Solution or Product Family</label>
+            <label>Customer Solution or Product Family</label>
             <input value={this.state.family} onChange={this.handleFamily}/>
           </div>
           <div className="field-wrapper">
-            <label>Enter your Telephone Number</label>
+            <label>Telephone Number</label>
             <input value={this.state.teleNumber} onChange={this.handleTele}/>
           </div>
           <div className="field-wrapper">
-            <label>Enter your Mobile Number</label>
+            <label>Mobile Number</label>
             <input value={this.state.mobileNumber} onChange={this.handleMobile}/>
           </div>
           <div className="field-wrapper">
-            <label>Enter your Industry Brand</label>
+            <label>Industry Brand</label>
             <input value={this.state.industry} onChange={this.handleIndustry}/>
           </div>
         </div>
@@ -146,7 +146,6 @@ class App extends Component {
             >
           { copied ? 'Copied!' : 'Copy' }
           </button>
-
         </div>
       </div>
     );
