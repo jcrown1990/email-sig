@@ -50,9 +50,6 @@ function App() {
     event.preventDefault();
 
     const doc = getIframe();
-
-    console.log(doc);
-
     doc.execCommand("selectAll");
     doc.execCommand("copy");
 
@@ -130,8 +127,5 @@ function App() {
     </div>
   );
 }
-
-
-
 
 export default App;
